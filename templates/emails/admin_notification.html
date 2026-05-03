@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ro">
+  <body style="margin:0;padding:24px;background:#eef3f7;font-family:Arial,sans-serif;color:#111827;">
+    <div style="max-width:600px;margin:0 auto;background:#ffffff;padding:32px;border-radius:18px;border:1px solid rgba(30,58,95,0.08);box-shadow:0 14px 30px rgba(16,42,67,0.08);">
+
+      <p style="margin:0 0 10px;color:#8a6f3d;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">
+        Mesaj nou de pe site
+      </p>
+
+      <h2 style="margin:0 0 22px;color:#102a43;font-size:26px;line-height:1.2;">
+        Cerere nouă de contact
+      </h2>
+
+      <div style="margin-bottom:18px;padding:18px;background:#f2f6fa;border-radius:14px;">
+        <p style="margin:0 0 8px;color:#52616b;">
+          <strong style="color:#1e3a5f;">Nume:</strong> {{ name }}
+        </p>
+
+        <p style="margin:0;color:#52616b;">
+          <strong style="color:#1e3a5f;">Email:</strong> {{ email }}
+        </p>
+      </div>
+
+      <div style="padding:18px;background:#f2f6fa;border-radius:14px;">
+        <p style="margin:0 0 10px;color:#1e3a5f;font-weight:700;">
+          Mesaj:
+        </p>
+
+        <p style="margin:0;white-space:pre-line;color:#52616b;line-height:1.7;">
+          {{ message }}
+        </p>
+      </div>
+
+      <hr style="margin:28px 0;border:none;border-top:1px solid #e5e0d8;">
+
+      <a href="mailto:{{ email }}"
+         style="display:inline-block;padding:13px 20px;background:#1e3a5f;color:#ffffff;text-decoration:none;border-radius:999px;font-weight:700;">
+        Răspunde clientului
+      </a>
+
+    </div>
+  </body>
+</html>

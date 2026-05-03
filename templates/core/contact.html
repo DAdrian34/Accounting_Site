@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Servicii Contabile Brașov{% endblock %}
+{% block meta_description %}
+Servicii contabile complete în Brașov: evidență contabilă, declarații fiscale, consultanță.
+{% endblock %}
+
+{% block content %}
+
+<section class="page-section">
+  <div class="contact-wrapper">
+
+    <h1 class="reveal">Contact</h1>
+
+    {% if success %}
+      <div class="success-message reveal">
+        Mesajul a fost trimis cu succes!
+      </div>
+    {% endif %}
+
+    <div class="contact-info">
+      <div class="contact-item reveal reveal-delay-1">
+        <div class="contact-card-header">
+          <span class="contact-icon" aria-hidden="true">📞</span>
+          <strong>Telefon</strong>
+        </div>
+        <p><a href="tel:+40743543874">+40 743 543 874</a></p>
+      </div>
+
+      <div class="contact-item reveal reveal-delay-2">
+        <div class="contact-card-header">
+          <span class="contact-icon" aria-hidden="true">💬</span>
+          <strong>WhatsApp</strong>
+        </div>
+        <p>
+          <a href="https://wa.me/40743543874" target="_blank" rel="noopener">
+            Scrie pe WhatsApp
+          </a>
+        </p>
+      </div>
+
+      <div class="contact-item reveal reveal-delay-3">
+        <div class="contact-card-header">
+          <span class="contact-icon" aria-hidden="true">✉️</span>
+          <strong>Email</strong>
+        </div>
+        <p>
+          <a href="mailto:nikont_serv@yahoo.com">
+            nikont_serv@yahoo.com
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="contact-main">
+      <div class="contact-form-container reveal reveal-delay-1">
+        <form method="post" class="contact-form">
+          {% csrf_token %}
+          {{ form.website }}
+
+          <label for="{{ form.name.id_for_label }}">Nume</label>
+          {{ form.name }}
+
+          <label for="{{ form.email.id_for_label }}">Email</label>
+          {{ form.email }}
+
+          <label for="{{ form.message.id_for_label }}">Mesaj</label>
+          {{ form.message }}
+
+          <button type="submit">Trimite mesaj</button>
+        </form>
+      </div>
+
+      <div class="map-section reveal reveal-delay-2">
+        <h2>Locație</h2>
+        <p>Strada Dragoș Vodă 1, Brașov, România</p>
+
+        <iframe
+          src="https://www.google.com/maps?q=Strada%20Dragos%20Voda%201%2C%20Brasov%2C%20Romania&output=embed"
+          width="100%"
+          height="100%"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

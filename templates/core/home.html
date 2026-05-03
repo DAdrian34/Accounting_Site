@@ -1,0 +1,156 @@
+<!-- templates/home.html -->
+{% extends "base.html" %}
+
+{% block title %}Expert Contabil Brașov | Servicii Contabile{% endblock %}
+{% block meta_description %}
+  Expert contabil în Brașov pentru firme și PFA. Consultanță contabilă și fiscală profesionistă.
+{% endblock %}
+
+{% block content %}
+
+{% if request.GET.sent %}
+  <div class="page-section">
+    <div class="success-message reveal">
+      Mesajul a fost trimis cu succes! Verifică emailul pentru confirmare.
+    </div>
+  </div>
+{% endif %}
+
+<section class="hero">
+  <div class="hero-content reveal">
+    <p class="eyebrow">Expert contabil autorizat • Brașov</p>
+
+    <h1>Contabilitate fără stres, cu control clar asupra finanțelor</h1>
+
+    <p class="hero-text">
+      Servicii contabile și fiscale pentru firme, PFA-uri și antreprenori care vor
+      ordine în documente, predictibilitate și sprijin profesionist.
+    </p>
+
+    <div class="hero-actions">
+      <a href="{% url 'contact' %}" class="btn btn-primary">Programează o discuție</a>
+      <a href="https://wa.me/40743543874" class="btn btn-whatsapp" target="_blank" rel="noopener">
+        WhatsApp
+      </a>
+    </div>
+
+    <p class="trust-line">
+      <span>✔ Răspuns rapid</span>
+      <span>✔ Fără obligații</span>
+      <span>✔ Discuție inițială gratuită</span>
+    </p>
+  </div>
+</section>
+
+<section class="trust-strip reveal">
+  <div class="trust-items">
+    <div>✔ Expert contabil autorizat CECCAR</div>
+    <div>✔ Servicii pentru SRL și PFA</div>
+    <div>✔ Suport rapid prin WhatsApp</div>
+  </div>
+</section>
+
+<section class="services-preview reveal">
+  <p class="eyebrow">Servicii principale</p>
+  <h2>Soluții contabile pentru afacerea ta</h2>
+
+  <div class="cards home-cards">
+    <article class="card reveal reveal-delay-1">
+      <div class="home-card-header">
+        <span class="home-card-icon" aria-hidden="true">📊</span>
+        <h3>Contabilitate SRL</h3>
+      </div>
+      <p class="card-tagline">Control financiar și conformitate completă</p>
+      <p>
+        Evidență contabilă, declarații fiscale, raportări periodice și claritate
+        asupra cifrelor firmei.
+      </p>
+    </article>
+
+    <article class="card reveal reveal-delay-2">
+      <div class="home-card-header">
+        <span class="home-card-icon" aria-hidden="true">🧾</span>
+        <h3>Contabilitate PFA</h3>
+      </div>
+      <p class="card-tagline">Simplu, clar și fără bătăi de cap</p>
+      <p>
+        Gestionarea obligațiilor fiscale pentru activități independente, cu explicații
+        simple și termene urmărite atent.
+      </p>
+    </article>
+
+    <article class="card reveal reveal-delay-3">
+      <div class="home-card-header">
+        <span class="home-card-icon" aria-hidden="true">📈</span>
+        <h3>Consultanță financiară</h3>
+      </div>
+      <p class="card-tagline">Decizii mai bune, bazate pe cifre reale</p>
+      <p>
+        Sprijin practic pentru optimizare fiscală, organizare financiară și dezvoltarea
+        afacerii.
+      </p>
+    </article>
+  </div>
+
+  <div class="section-action reveal reveal-delay-3">
+    <a href="{% url 'services' %}" class="btn btn-secondary">
+      Vezi toate serviciile
+    </a>
+  </div>
+</section>
+
+<section class="page-section reveal">
+  <p class="eyebrow">De ce să colaborezi cu noi</p>
+  <h2>Mai mult decât contabilitate</h2>
+
+  <div class="cards benefits-cards">
+    <article class="card reveal reveal-delay-1">
+      <div class="home-card-header">
+        <span class="home-card-icon" aria-hidden="true">🔎</span>
+        <h3>Claritate</h3>
+      </div>
+      <p>
+        Explicăm lucrurile simplu, fără jargon inutil, ca să înțelegi exact
+        situația firmei tale.
+      </p>
+    </article>
+
+    <article class="card reveal reveal-delay-2">
+      <div class="home-card-header">
+        <span class="home-card-icon" aria-hidden="true">🛡️</span>
+        <h3>Siguranță</h3>
+      </div>
+      <p>
+        Urmărim termenele, declarațiile și obligațiile fiscale pentru a reduce
+        riscul de erori sau penalități.
+      </p>
+    </article>
+
+    <article class="card reveal reveal-delay-3">
+      <div class="home-card-header">
+        <span class="home-card-icon" aria-hidden="true">🤝</span>
+        <h3>Comunicare</h3>
+      </div>
+      <p>
+        Primești suport constant, răspunsuri clare și îndrumare atunci când ai
+        nevoie.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="page-section reveal">
+  <div class="card card-featured services-cta reveal reveal-delay-1">
+    <h2>Vrei o contabilitate mai simplă și mai clară?</h2>
+    <p>
+      Programează o discuție și vedem ce soluție se potrivește cel mai bine firmei
+      sau activității tale.
+    </p>
+
+    <a href="{% url 'contact' %}" class="btn btn-primary">
+      Programează o discuție
+    </a>
+  </div>
+</section>
+
+{% endblock %}

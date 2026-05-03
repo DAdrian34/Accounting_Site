@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Servicii Contabile Brașov{% endblock %}
+{% block meta_description %}
+Servicii contabile complete în Brașov: evidență contabilă, declarații fiscale, consultanță.
+{% endblock %}
+
+{% block content %}
+<section class="page-section">
+
+  <div class="about-layout">
+    <div class="about-image reveal reveal-delay-1">
+      <img src="{% static 'images/profile.jpg' %}" alt="Expert contabil Brașov">
+    </div>
+
+    <div class="about-content reveal reveal-delay-2">
+      <h1>Despre mine</h1>
+
+      <p>
+        Sunt expert contabil autorizat,
+        <strong class="highlight-badge">membru CECCAR</strong>,
+        și lucrez alături de antreprenori și PFA-uri din Brașov, oferind servicii de contabilitate
+        și consultanță fiscală adaptate fiecărei afaceri.
+      </p>
+
+      <p>
+        Pentru mine, contabilitatea nu înseamnă doar cifre, ci încredere,
+        claritate și liniștea că lucrurile sunt în ordine. Îmi doresc ca fiecare
+        client să înțeleagă ce se întâmplă în propria afacere și să poată lua
+        decizii sigure, fără stres sau incertitudine.
+      </p>
+
+      <p>
+        Pun accent pe comunicare deschisă, pe relații de lungă durată și pe
+        implicare reală. Sunt aici să răspund la întrebări, să explic lucrurile
+        pe înțeles și să ofer soluții atunci când apar situații mai dificile.
+      </p>
+    </div>
+  </div>
+
+  <div class="about-highlights">
+    <article class="about-feature-card reveal reveal-delay-1">
+      <div class="about-feature-header">
+        <span class="about-feature-icon" aria-hidden="true">📌</span>
+        <h2>Sprijin pentru etapele importante</h2>
+      </div>
+
+      <p>
+        Pe lângă serviciile de evidență contabilă, declarații fiscale și
+        consultanță, te pot ajuta și cu
+        <strong class="highlight-badge">înființarea firmei sau PFA-ului</strong>,
+        precum și cu
+        <strong class="highlight-badge">modificările la Registrul Comerțului</strong>
+        (schimbări de sediu, asociați, administratori, obiect de activitate etc.),
+        astfel încât să ai un singur partener pentru toate etapele afacerii tale.
+      </p>
+    </article>
+
+    <article class="about-feature-card reveal reveal-delay-2">
+      <div class="about-feature-header">
+        <span class="about-feature-icon" aria-hidden="true">🤝</span>
+        <h2>Parteneriat pe termen lung</h2>
+      </div>
+
+      <p>
+        <strong class="highlight-badge">Lucrând împreună</strong>, vei avea alături un partener de
+        încredere, care îți oferă sprijin constant și siguranța că partea
+        financiară și administrativă este bine gestionată, iar tu te poți concentra
+        pe dezvoltarea afacerii tale.
+      </p>
+    </article>
+  </div>
+
+  <div class="section-action reveal reveal-delay-3">
+    <a href="{% url 'contact' %}" class="btn btn-primary">
+      Solicită o ofertă
+    </a>
+  </div>
+
+</section>
+{% endblock %}

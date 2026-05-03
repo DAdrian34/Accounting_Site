@@ -1,0 +1,68 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>{% block title %}Expert Contabil Brașov | Servicii Contabilitate{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Expert contabil în Brașov. Oferim servicii de contabilitate pentru firme și PFA. Contactează-ne pentru consultanță financiară.{% endblock %}">
+
+    <!-- Canonical (SEO important) -->
+    <link rel="canonical" href="https://expertcontabilbrasov.ro{{ request.path }}">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <header class="site-header">
+        <nav class="navbar">
+          <a href="{% url 'home' %}" class="logo">Expert Contabil Brașov</a>
+
+          <div class="nav-links">
+            <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Acasă</a>
+            <a href="{% url 'services' %}" class="{% if '/servicii' in request.path %}active{% endif %}">Servicii</a>
+            <a href="{% url 'about' %}" class="{% if '/despre' in request.path %}active{% endif %}">Despre</a>
+            <a href="{% url 'contact' %}" class="{% if '/contact' in request.path %}active{% endif %}">Contact</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        {% block content %}
+        {% endblock %}
+      </main>
+
+      <footer class="site-footer">
+        <p>&copy; © NIKONT_SERV SRL | Brașov</p>
+      </footer>
+    </div>
+
+    <script>
+      const revealElements = document.querySelectorAll('.reveal');
+
+      const revealOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          entry.target.classList.toggle('visible', entry.isIntersecting);
+        });
+      }, {
+        threshold: 0.15
+      });
+
+      revealElements.forEach(element => {
+        revealOnScroll.observe(element);
+      });
+    </script>
+
+    {% block scripts %}
+    {% endblock %}
+  </body>
+</html>

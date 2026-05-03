@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Mesaj trimis{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="contact-wrapper">
+        <div class="contact-form">
+            <h1>Mulțumim!</h1>
+            <p>Mesajul a fost trimis cu succes. Vei fi contactat(ă) în cel mai scurt timp.</p>
+
+            <a href="{% url 'home' %}" class="btn btn-primary">Înapoi acasă</a>
+            <a href="https://wa.me/407XXXXXXXX" class="btn btn-whatsapp" target="_blank">
+                Scrie pe WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
