@@ -1,6 +1,8 @@
 .venv/
 .env
 db.sqlite3
+docker-compose.local.yml
+data.json
 __pycache__/
 *.pyc
 *.pyo
