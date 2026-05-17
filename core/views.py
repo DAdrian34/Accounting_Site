@@ -8,6 +8,7 @@ from django.utils.html import strip_tags
 
 from .forms import ContactForm
 from .models import ContactMessage
+from ratelimit.decorators import ratelimit
 
 
 def home(request):
@@ -22,6 +23,7 @@ def about(request):
     return render(request, 'core/about.html')
 
 
+@ratelimit(key='ip', rate='5/m', method='POST', block=True)
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
