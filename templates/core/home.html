@@ -8,10 +8,28 @@
 
 {% if request.GET.sent %}
   <div class="page-section">
-    <div class="success-message reveal">
-      Mesajul a fost trimis cu succes! Verifică emailul pentru confirmare.
+    <div class="success-message reveal" id="success-message">
+      {% comment %} Mesajul a fost trimis cu succes! Verifică emailul pentru confirmare. {% endcomment %}
     </div>
   </div>
+
+  <script>
+    setTimeout(function () {
+      const message = document.getElementById("success-message");
+
+      if (message) {
+        message.style.transition = "opacity 0.5s ease";
+        message.style.opacity = "0";
+
+        setTimeout(function () {
+          message.remove();
+
+          // remove ?sent=1 from the URL without reloading
+          window.history.replaceState({}, document.title, window.location.pathname);
+        }, 500);
+      }
+    }, 2000);
+  </script>
 {% endif %}
 
 <section class="hero">
@@ -137,7 +155,7 @@
   </div>
 </section>
 
-<section class="page-section reveal">
+{% comment %} <section class="page-section reveal">
   <p class="eyebrow">Contabilitate în Brașov</p>
   <h2>Expert contabil pentru firme și PFA-uri</h2>
 
@@ -152,7 +170,7 @@
     Colaborăm cu firme mici, PFA-uri și antreprenori care vor o contabilitate
     clară, termene respectate și sprijin practic în relația cu autoritățile.
   </p>
-</section>
+</section> {% endcomment %}
 
 <section class="page-section reveal">
   <div class="card card-featured services-cta reveal reveal-delay-1">

@@ -17,6 +17,13 @@ class ContactForm(forms.Form):
         label='Mesaj',
         widget=forms.Textarea(attrs={'placeholder': 'Scrie mesajul tău aici'}),
     )
+    privacy_acceptance = forms.BooleanField(
+        required=True,
+        label='Sunt de acord cu Politica de confidențialitate',
+        error_messages={
+            'required': 'Trebuie să acceptați Politica de confidențialitate pentru a trimite mesajul.'
+        },
+    )
     website = forms.CharField(
         required=False,
         widget=forms.TextInput(attrs={

@@ -666,6 +666,37 @@ button {
     transition: border-color var(--transition-default), box-shadow var(--transition-default), background-color var(--transition-default);
 }
 
+.privacy-checkbox {
+    margin: 4px 0 18px;
+    color: var(--color-text-muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.contact-form .privacy-checkbox input[type="checkbox"] {
+    width: auto;
+    margin: 3px 8px 0 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+.privacy-checkbox label {
+    display: inline;
+    margin: 0;
+    font-weight: 400;
+}
+
+.privacy-checkbox a {
+    color: var(--color-brand);
+    font-weight: 700;
+}
+
+.form-error {
+    margin-top: 6px;
+    color: #b42318;
+    font-size: 14px;
+}
+
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
@@ -703,6 +734,53 @@ button {
     border-radius: var(--radius-lg);
 }
 
+.map-consent {
+    flex: 1;
+    min-height: 420px;
+    margin-top: 14px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-solid);
+    text-align: center;
+}
+
+.map-consent-title {
+    margin: 0 0 10px;
+    color: var(--color-heading);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.map-consent p {
+    max-width: 430px;
+    margin: 0 auto 14px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.map-consent-button {
+    align-self: center;
+    margin: 4px 0 14px;
+}
+
+.map-consent-note {
+    font-size: 14px;
+}
+
+.map-consent-link {
+    color: var(--color-brand);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.map-consent-link:hover {
+    text-decoration: underline;
+}
+
 .success-message {
     margin-bottom: 20px;
     padding: 12px;
@@ -717,6 +795,27 @@ button {
     text-align: center;
     background: rgba(242, 246, 250, 0.9);
     border-top: 1px solid var(--color-border-soft);
+}
+
+.footer-legal {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-legal a {
+    color: var(--color-brand);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+.footer-legal span {
+    margin: 0 6px;
+    color: var(--color-text-muted);
 }
 
 /* GLOBAL */
@@ -915,6 +1014,11 @@ button {
         min-height: 280px;
     }
 
+        .map-consent {
+        min-height: 280px;
+        padding: 24px 18px;
+    }
+
     .service-card summary {
         cursor: pointer;
     }
@@ -963,6 +1067,15 @@ button {
     .service-cta .cta-copy {
         display: block;
     }
+
+        .footer-legal span {
+        display: none;
+    }
+
+    .footer-legal a {
+        display: block;
+        margin-top: 6px;
+    }
 }
 
 /* DESKTOP SERVICE CARDS */
@@ -1005,3 +1118,4 @@ button {
         content: "";
     }
 }
+

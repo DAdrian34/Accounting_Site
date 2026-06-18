@@ -8,8 +8,7 @@ from django.utils.html import strip_tags
 
 from .forms import ContactForm
 from .models import ContactMessage
-from ratelimit.decorators import ratelimit
-
+from django_ratelimit.decorators import ratelimit
 
 def home(request):
     return render(request, 'core/home.html')
@@ -75,3 +74,14 @@ def contact(request):
     return render(request, 'core/contact.html', {
         'form': form,
     })
+
+def privacy_policy(request):
+    return render(request, 'core/privacy_policy.html')
+
+
+def cookie_policy(request):
+    return render(request, 'core/cookie_policy.html')
+
+
+def terms_conditions(request):
+    return render(request, 'core/terms_conditions.html')

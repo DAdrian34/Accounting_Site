@@ -65,6 +65,21 @@
           <label for="{{ form.message.id_for_label }}">Mesaj</label>
           {{ form.message }}
 
+          <div class="privacy-checkbox">
+          {{ form.privacy_acceptance }}
+          <label for="{{ form.privacy_acceptance.id_for_label }}">
+            Am citit și sunt de acord cu
+            <a href="{% url 'privacy_policy' %}" target="_blank" rel="noopener">
+              Politica de confidențialitate
+            </a>.
+          </label>
+          {% if form.privacy_acceptance.errors %}
+            <div class="form-error">
+              {{ form.privacy_acceptance.errors }}
+            </div>
+          {% endif %}
+        </div>
+
           <button type="submit">Trimite mesaj</button>
         </form>
       </div>
@@ -77,12 +92,62 @@
             Strada Dragoș Vodă 1, Brașov, România<br>
             Telefon: <a href="tel:+40743543874">+40 743 543 874</a>
           </p>
-        <iframe
-          src="https://www.google.com/maps?q=Strada%20Dragos%20Voda%201%2C%20Brasov%2C%20Romania&output=embed"
-          width="100%"
-          height="100%"
-          loading="lazy">
-        </iframe>
+        <div
+  class="map-consent"
+  data-map-url="https://www.google.com/maps?q=Strada%20Dragos%20Voda%201%2C%20Brasov%2C%20Romania&output=embed"
+>
+  <p class="map-consent-title">Harta Google nu a fost încărcată</p>
+
+  <p>
+    Pentru protejarea confidențialității, harta este încărcată doar după ce alegeți
+    să o afișați.
+  </p>
+
+  <button type="button" class="map-consent-button">
+    Încarcă harta Google
+  </button>
+
+  <p class="map-consent-note">
+    Prin încărcarea hărții, Google poate prelucra date despre utilizarea serviciului.
+    Consultați și
+    <a href="{% url 'cookie_policy' %}">Politica cookies</a>.
+  </p>
+
+  <a
+    class="map-consent-link"
+    href="https://www.google.com/maps/search/?api=1&query=Strada%20Dragos%20Voda%201%2C%20Brasov%2C%20Romania"
+    target="_blank"
+    rel="noopener"
+  >
+    Deschide locația în Google Maps
+  </a>
+</div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const mapConsent = document.querySelector(".map-consent");
+
+          if (!mapConsent) {
+            return;
+          }
+
+          const loadButton = mapConsent.querySelector(".map-consent-button");
+
+          loadButton.addEventListener("click", function () {
+            const iframe = document.createElement("iframe");
+
+            iframe.src = mapConsent.dataset.mapUrl;
+            iframe.width = "100%";
+            iframe.height = "100%";
+            iframe.loading = "lazy";
+            iframe.title = "Locația Expert Contabil Brașov";
+            iframe.allowFullscreen = true;
+
+            mapConsent.replaceWith(iframe);
+          });
+        });
+      </script>
+
       </div>
     </div>
 
